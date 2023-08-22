@@ -10,9 +10,9 @@ def get_weather_forecast(city: str, lang: str = 'ru'):
 
 
 if __name__ == '__main__':
-    cities_list = ['Лондон', 'Шереметьево', 'Череповец']
-    for city in cities_list:
+    cities = ['Лондон', 'Шереметьево', 'Череповец']
+    for city in cities:
         try:
             print(get_weather_forecast(city))
         except requests.exceptions.HTTPError as error:
-            exit(f"Can't fetch the data from the remote host: \n {error}")
+            print(f"Can't fetch the data from the remote host: \n {error}")
